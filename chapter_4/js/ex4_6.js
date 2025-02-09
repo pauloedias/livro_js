@@ -21,7 +21,7 @@ frm.addEventListener("submit", (e) => {
             resp1.innerText = `Notas de R$ 100: ${resto}`
         } if (saque >= 50) {
             resp2.innerText = `Notas de R$ 50: ${resto2}`
-        } if ( saque >= 10) {
+        } if (saque >= 10 && saque != 50 && saque != 100) {
             resp3.innerText = `Notas de R$ 10: ${resto3}`   
         }
     }
