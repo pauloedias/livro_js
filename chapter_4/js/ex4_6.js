@@ -17,9 +17,13 @@ frm.addEventListener("submit", (e) => {
         let resto2 = Math.floor((saque - (resto * 100))/50)
         let resto3 = Math.floor((saque - (resto * 100) - (resto2 * 50))/10)
 
-        resp1.innerText = `Notas de R$ 100: ${resto}`
-        resp2.innerText = `Notas de R$ 50: ${resto2}`
-        resp3.innerText = `Notas de R$ 10: ${resto3}`
+        if (saque >= 100){
+            resp1.innerText = `Notas de R$ 100: ${resto}`
+        } if (saque >= 50) {
+            resp2.innerText = `Notas de R$ 50: ${resto2}`
+        } if ( saque >= 10) {
+            resp3.innerText = `Notas de R$ 10: ${resto3}`   
+        }
     }
 })
 
