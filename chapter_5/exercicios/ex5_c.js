@@ -20,7 +20,7 @@ frm.addEventListener("submit", (e) => {
     }
 
     resp1.innerText = `Divisores do ${numero} : ${divisores}`               
-    if (numero == soma){                                                        // verifica se o número é perfeito
+    if (numero == soma){                       // verifica se o número é perfeito
         resp2.innerText = `O número ${numero} é um número perfeito!`
     } else {
         resp2.innerText = `O número ${numero} não é um número perfeito!`
