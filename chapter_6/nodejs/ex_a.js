@@ -1,7 +1,13 @@
 const prompt = require("prompt-sync")()
-const nome = []
-const nota = []
+console.log("Informe os alunos. Após digite 'Fim' no nome para sair")
+const alunos = []
+
 do{
-    nome.push = prompt("Nome do Aluno: ")
-    nota.push = prompt("Nota do Aluno: ")    
+    const nome = prompt("Nome do Aluno: ")
+    if(nome == "Fim" || nome == "fim"){
+        break
+    }
+    const nota = Number(prompt("Nota do Aluno: "))
+    alunos.push({nome, nota})
+    console.log("Ok! Aluno(a) cadastrado(a)...")
 } while(true)
