@@ -1,15 +1,27 @@
 const frm = document.querySelector("form")
-const resp1 = document.querySelector("pre")
+const resp = document.querySelector("pre")
 
-const clubes = []
+let clubes = []
 
 frm.addEventListener("submit", (e) => {
-    e.preventDefault()           //evita o envio do form
+    e.preventDefault()
 
-    let clube = frm.inClube.value //obtém o clube a ser adicionado
-    clubes.push(clube)             //adiciona o clube ao vetor clubes
+    const clube = frm.inClube.value
 
-    if (clubes.includes(clube)){
-        console.log("Clube adicionado com sucesso")
+    clubes.push(clube)
+    console.log(clubes)
+    frm.btListarClubes.dispatchEvent(new Event("click"))
+})
+
+
+resposta = ""
+
+frm.btListarClubes.addEventListener("click", () => {
+    if(clubes.length == 0){
+        alert("Não há clubes na lista!")
     }
+    clubes.forEach(clube => {
+        resposta += `${clube}\n`
+    });
+    resp.innerText = resposta
 })
