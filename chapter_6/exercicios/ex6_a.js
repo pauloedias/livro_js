@@ -24,7 +24,6 @@ frm.btListarClubes.addEventListener("click", () => {
 })
 
 let resposta = ""
-
  
 frm.btTabelaJogos.addEventListener("click", () => {
     if (clubes.length % 2 != 0) {
@@ -33,7 +32,7 @@ frm.btTabelaJogos.addEventListener("click", () => {
     let lista_cortada = clubes.slice(((clubes.length)/2)); // Separa o vetor clubes em 2
     resposta = ""; // Limpa a resposta anterior
     for (let i = 0; i < (clubes.length)/2; i++) {           
-        resposta += `${clubes[i]} x ${lista_cortada[i]}\n`;
+        resposta += `${clubes[i]} x ${lista_cortada[((clubes.length/2) - 1) - i]}\n`;
     }
 
     resp.innerText = resposta; // Atualiza o texto no elemento com resp
