@@ -5,14 +5,30 @@ frm.addEventListener("submit", (e) => {
     e.preventDefault()
 
     const frase = frm.inFrase.value //obtém o texto
-    frase.trim()
+    let fraseCompara = ""
     const tamanho = frase.length      //obtém o tamanho da string
 
     let inverso = ""
 
-    for(i = tamanho - 1; i >= 0 ; i--){
-        inverso += `${frase[i]}`
+    for(i = 0 ; i < tamanho ; i++){
+        if(frase[i] == " "){
+            fraseCompara += ""
+        } else {
+            fraseCompara += frase[i].toLowerCase()
+        }
     }
-    resp.innerText = inverso
-    console.log(inverso)
+
+    console.log(fraseCompara)
+
+    for(i = tamanho - 1; i >= 0 ; i--){
+        if(frase[i] == " "){
+            inverso += ``
+        } else{
+            inverso += `${frase[i]}` 
+        }
+    }
+    resp.innerText = frase
+    if(inverso.toLowerCase() == fraseCompara){
+        resp.innerText += "\nÉ um Palíndromo"
+    }
 })
